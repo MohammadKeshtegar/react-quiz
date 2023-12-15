@@ -1,10 +1,5 @@
-function Footer() {
-  return (
-    <footer className="footer">
-      <div className="timer">05:00</div>
-      <div className="btn btn-next">Next</div>
-    </footer>
-  );
+function Footer({ children }) {
+  return <footer className="footer">{children}</footer>;
 }
 
 export default Footer;

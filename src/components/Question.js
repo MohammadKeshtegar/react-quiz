@@ -1,13 +1,21 @@
-function Question() {
+import Options from "./Options";
+
+function Question({ question, answer, dispatch }) {
   return (
     <div className="question-container">
-      <h4>Which is the most popular JavaScript framework?</h4>
-      <ul className="options">
-        <button className="btn btn-option">Angular</button>
-        <button className="btn btn-option">React</button>
-        <button className="btn btn-option">Svelte</button>
-        <button className="btn btn-option">Vue</button>
-      </ul>
+      <h4>{question.question}</h4>
+      <div className="options">
+        {question.options.map((option, index) => (
+          <Options
+            key={option}
+            option={option}
+            question={question}
+            index={index}
+            answer={answer}
+            dispatch={dispatch}
+          />
+        ))}
+      </div>
     </div>
   );
 }
